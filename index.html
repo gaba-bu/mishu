@@ -180,6 +180,24 @@
     }
   </style>
 </head>
+ <script>
+  function unlockSecret() {
+    const password = document.getElementById("secretPassword").value;
+    const secret = document.getElementById("secretContent");
+    const error = document.getElementById("errorMsg");
+
+    // CHANGE THIS PASSWORD 
+    const correctPassword = "bujji";
+
+    if (password === correctPassword) {
+      secret.style.display = "block";
+      error.style.display = "none";
+    } else {
+      error.style.display = "block";
+    }
+  }
+</script>
+
 <body>
   <!-- Hidden background music player -->
 <audio id="bgMusic" loop>
@@ -284,9 +302,65 @@
           box-shadow:0 6px 14px rgba(255,75,110,0.35);
         "
       >
-        Press this for another surprise
+        Press this to play our song 
       </button>
     </div>
+
+  <!-- Secret Box -->
+<div class="section" style="text-align:center;">
+  <h2>🔐 A little secret</h2>
+
+  <input
+    type="password"
+    id="secretPassword"
+    placeholder="Enter the password"
+    style="
+      padding:10px;
+      border-radius:10px;
+      border:1px solid #ddd;
+      width:70%;
+      max-width:260px;
+      font-size:0.9rem;
+      margin-top:10px;
+    "
+  >
+
+  <br><br>
+
+  <button
+    onclick="unlockSecret()"
+    style="
+      padding:10px 18px;
+      border-radius:12px;
+      border:none;
+      background:#ff4b6e;
+      color:white;
+      font-size:0.9rem;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(255,75,110,0.35);
+    "
+  >
+    Open the secret 💌
+  </button>
+
+  <p id="errorMsg" style="color:#e63b5e; font-size:0.8rem; margin-top:8px; display:none;">
+    That’s not it… try again 🤍
+  </p>
+
+  <!-- Hidden secret content -->
+  <div id="secretContent" style="display:none; margin-top:16px; font-size:0.9rem; color:#555;">
+    <p>
+      This page exists because of you.<br>
+      Mishu... these past 3 months have been THE best time of my life. everything, from the day i saw you in that class and the memories we had since then… I had the best time of my life because you were there by my side at all times. But, this year i got to spend my birthday, your birthday and this new year’s with you… and these are just the beginning. I will get to spend my everything with you from now… this year and all the coming years from now on will be the best years of our lives. I cant wait to spend the rest of my days with you, by your side, NEVER leaving your hand. I love you so much bujji and I just cant wait for everything we are planning to happen. And I know for a fact it will… because I have THE best person in the world rooting for me. 
+I LOVE YOU SO MUCH BABY
+Your Love,
+Samuel.
+
+    </p>
+  </div>
+</div>
+
 
     <div class="footer">
       Made with way too many feelings. <br>
@@ -309,6 +383,7 @@
 </body>
 
 </html>
+
 
 
 
